@@ -11,7 +11,14 @@ export default function Popup({ onClose, title, children }) {
           className="popup__close"
           type="button"
           onClick={onClose}
-        />
+        >
+          <img
+            src="../../images/close-button.png"
+            alt="Fechar"
+            className="popup__close-icon"
+          />
+        </button>
+
         {title && <h3 className="popup__title">{title}</h3>}
         {children}
       </div>

@@ -6,6 +6,7 @@ import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import RemoveCard from "./components/Popup/components/RemoveCard/RemoveCard";
 import avatar from "../../images/avatar.png";
+import editButton from "../../images/edit_button.png";
 
 const cards = [
   {
@@ -68,7 +69,7 @@ export default function Main() {
                 onClick={() => handleOpenPopup(editProfilePopup)}
               >
                 <img
-                  src="../../images/edit_button.png"
+                  src={editButton}
                   alt="icone de edição"
                   className="profile__image-edit-button"
                 />
