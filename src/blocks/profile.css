@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0;
+  margin: 0 auto;
 }
 
 .profile__info {

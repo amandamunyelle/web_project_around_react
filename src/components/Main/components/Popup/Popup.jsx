@@ -1,11 +1,29 @@
-export default function Popup({ onClose, title, children }) {
+export default function Popup({
+  onClose,
+  title,
+  children,
+  isOpen,
+  type = "form",
+}) {
+  if (type === "image") {
+    return (
+      <div className={`popup popup-image ${isOpen ? "popup_opened" : ""}`}>
+        <div className="popup-image__container">
+          <button
+            aria-label="Fechar"
+            className="popup-image__close-button"
+            type="button"
+            onClick={onClose}
+          />
+          {children}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="popup">
-      <div
-        className={`popup__content ${
-          !title ? "popup__content_content_image" : ""
-        }`}
-      >
+    <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
+      <div className="popup__container">
         <button
           aria-label="Fechar"
           className="popup__close"
@@ -18,7 +36,6 @@ export default function Popup({ onClose, title, children }) {
             className="popup__close-icon"
           />
         </button>
-
         {title && <h3 className="popup__title">{title}</h3>}
         {children}
       </div>

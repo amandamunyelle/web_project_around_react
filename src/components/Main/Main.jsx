@@ -25,7 +25,6 @@ const cards = [
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
-
   const newCardPopup = { title: "Novo local", children: <NewCard /> };
   const editProfilePopup = {
     title: "Editar perfil",
@@ -85,7 +84,6 @@ export default function Main() {
           onClick={() => handleOpenPopup(newCardPopup)}
         />
       </section>
-
       <section className="elements page__section">
         <ul className="elements__cards">
           {cards.map((card) => (
@@ -98,7 +96,6 @@ export default function Main() {
           ))}
         </ul>
       </section>
-
       {popup && (
         <Popup onClose={handleClosePopup} title={popup.title}>
           {popup.children}
